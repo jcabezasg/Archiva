@@ -21,6 +21,10 @@ echo The script is initiating
 
 sleep 60
 
+# Command to get the IP of the running Docker container on which Archiva will be running
+
+IP="$(ifconfig | grep -v 'eth0:' | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+
 # Curl command to add a new user in Archiva via REST service
 
 curl -H "Authorization: Basic YWRtaW46YWRtaW4=" -H "Content-Type: application/json" -X POST -d '{
@@ -40,7 +44,7 @@ curl -H "Authorization: Basic YWRtaW46YWRtaW4=" -H "Content-Type: application/js
         "assignedRoles": null,
         "readOnly": false,
         "userManagerId": "ttt"
-    }' http://localhost:8080/restServices/redbackServices/userService/createAdminUser
+    }' http://$IP:8080/restServices/redbackServices/userService/createAdminUser
 
 # User creation is informed
 

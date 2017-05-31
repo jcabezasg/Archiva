@@ -19,7 +19,7 @@ echo The script is initiating
 
 # The following sleep instructions are addressed to give Archiva enough time to finish its start rutines
 
-sleep 60
+sleep 200
 
 # Command to get the IP of the running Docker container on which Archiva will be running
 

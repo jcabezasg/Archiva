@@ -23,7 +23,11 @@ sleep 60
 
 # Command to get the IP of the running Docker container on which Archiva will be running
 
+# We get the IP of the machine
+
 IP="$(ifconfig | grep -v 'eth0:' | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+
+echo $IP
 
 # Curl command to add a new user in Archiva via REST service
 

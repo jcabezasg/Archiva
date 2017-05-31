@@ -48,7 +48,7 @@ curl -H "Authorization: Basic YWRtaW46YWRtaW4=" -H "Content-Type: application/js
         "assignedRoles": null,
         "readOnly": false,
         "userManagerId": "ttt"
-    }' http://$IP:8080/restServices/redbackServices/userService/createAdminUser
+    }' http://localhost:8080/restServices/redbackServices/userService/createAdminUser
 
 # User creation is informed
 
